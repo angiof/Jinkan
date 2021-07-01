@@ -23,7 +23,7 @@ class ViewModelJinkan(application: Application) : AndroidViewModel(application) 
 
     fun getTops() {
 
-        RetroCleint().createService()?.geTop()?.enqueue(object : Callback<Risposte> {
+        RetroCleint().createService()?.geTop(2021)?.enqueue(object : Callback<Risposte> {
             override fun onResponse(call: Call<Risposte>, response: Response<Risposte>) {
 
 
