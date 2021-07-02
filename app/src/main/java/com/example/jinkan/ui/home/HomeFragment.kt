@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
                         override fun onclikBundler(top: Top) {
 
 
-                             val action =HomeFragmentDirections.actionNavigationHomeToDetailss(top.title)
+                             val action =HomeFragmentDirections.actionNavigationHomeToDetailss(top.title,top.imageUrl,top.type,top.startDate,top.rank)
                             requireView().findNavController().navigate(action)
 
                             Toast.makeText(requireContext(), "premuto", Toast.LENGTH_SHORT).show()

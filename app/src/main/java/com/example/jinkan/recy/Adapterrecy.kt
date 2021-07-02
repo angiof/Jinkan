@@ -46,7 +46,8 @@ class Adapterrecy(private val dataSet: List<Top>,val context: Context,val onClic
         // contents of the view with that element
 
         viewHolder.binding.tTitolo.text = dataSet[position].title
-        Glide.with(context).load(dataSet[position].imageUrl).into(viewHolder.binding.imageView)
+        Glide.with(context).load(dataSet[position].imageUrl)
+            .into(viewHolder.binding.imageView)
 
         viewHolder.binding.cardView.setOnClickListener {
 

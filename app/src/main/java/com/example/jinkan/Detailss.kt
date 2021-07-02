@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.jinkan.databinding.FragmentDetailssBinding
 
 
 class Detailss : Fragment() {
-    val args : DetailssArgs by navArgs()
+    val args: DetailssArgs by navArgs()
 
     lateinit var binding: FragmentDetailssBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +28,14 @@ class Detailss : Fragment() {
         binding = FragmentDetailssBinding.inflate(layoutInflater)
 
 
+        Glide.with(requireActivity()).load(args.url)
+            .centerCrop()
+            .into(binding.imgCopertina)
 
-        binding.tTitolo.text=args.nome
+        binding.genere.text = "Genere : ${args.genere}"
+        binding.tTitle.text = args.data
+        binding.textView2.text = args.data
+        binding.tRank.text=args.rank.toString()
 
         return binding.root
 

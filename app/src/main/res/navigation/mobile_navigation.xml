@@ -36,5 +36,23 @@
             app:argType="string"
             app:nullable="true"
             android:defaultValue="name" />
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="urlLink" />
+        <argument
+            android:name="genere"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="bla bla" />
+        <argument
+            android:name="data"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="pp" />
+        <argument
+            android:name="rank"
+            app:argType="integer" />
     </fragment>
 </navigation>

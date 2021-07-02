@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Detailss">
+    android:fillViewport="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/t_titolo"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".Detailss">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+
+        <ImageView
+
+            android:id="@+id/img_copertina"
+            android:layout_width="411dp"
+            android:layout_height="403dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/t_title"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/img_copertina"
+            app:layout_constraintStart_toStartOf="@+id/img_copertina"
+            app:layout_constraintTop_toBottomOf="@+id/img_copertina" />
+
+        <TextView
+            android:id="@+id/genere"
+            android:layout_width="94dp"
+            android:layout_height="28dp"
+            android:hint="genere"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_title" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="241dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="32dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_rank" />
+
+        <TextView
+            android:id="@+id/t_rank"
+            android:layout_width="96dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="16dp"
+            android:hint="rank"
+            android:text="rank"
+            app:layout_constraintEnd_toEndOf="@+id/genere"
+            app:layout_constraintStart_toStartOf="@+id/genere"
+            app:layout_constraintTop_toBottomOf="@+id/genere" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
