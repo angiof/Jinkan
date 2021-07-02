@@ -3,6 +3,7 @@ package com.example.jinkan.recy
 import android.app.Application
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
@@ -14,7 +15,7 @@ import com.example.jinkan.models.Myapp
 import com.example.jinkan.models.Top
 
 
-class Adapterrecy(private val dataSet: List<Top>,val context: Context) :
+class Adapterrecy(private val dataSet: List<Top>,val context: Context,val onClickListener: onClikcsListainer) :
     RecyclerView.Adapter<Adapterrecy.ViewHolder>() {
 
 
@@ -47,11 +48,25 @@ class Adapterrecy(private val dataSet: List<Top>,val context: Context) :
         viewHolder.binding.tTitolo.text = dataSet[position].title
         Glide.with(context).load(dataSet[position].imageUrl).into(viewHolder.binding.imageView)
 
+        viewHolder.binding.cardView.setOnClickListener {
+
+            onClickListener.onclikBundler(top = dataSet[position])
+
+
+        }
+
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
+
+
+    interface  onClikcsListainer{
+
+        fun onclikBundler(top: Top)
+
+    }
 
 }
 

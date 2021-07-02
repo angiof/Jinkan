@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.jinkan.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailss"
+            app:destination="@id/detailss" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +26,15 @@
         android:name="com.example.jinkan.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/detailss"
+        android:name="com.example.jinkan.Detailss"
+        android:label="fragment_detailss"
+        tools:layout="@layout/fragment_detailss" >
+        <argument
+            android:name="nome"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="name" />
+    </fragment>
 </navigation>
